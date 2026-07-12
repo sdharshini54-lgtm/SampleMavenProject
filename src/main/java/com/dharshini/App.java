@@ -1,13 +1,26 @@
 package com.dharshini;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+import com.google.gson.Gson;
+
+class Student {
+    String name;
+    int age;
+
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+public class App {
+    public static void main(String[] args) {
+
+        Student s = new Student("Dharshini", 20);
+
+        Gson gson = new Gson();
+
+        String json = gson.toJson(s);
+
+        System.out.println(json);
     }
 }
